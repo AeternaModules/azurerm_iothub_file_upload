@@ -19,13 +19,13 @@ EOT
     connection_string     = string
     container_name        = string
     iothub_id             = string
-    authentication_type   = optional(string, "keyBased")
-    default_ttl           = optional(string, "PT1H")
+    authentication_type   = optional(string) # Default: "keyBased"
+    default_ttl           = optional(string) # Default: "PT1H"
     identity_id           = optional(string)
-    lock_duration         = optional(string, "PT1M")
-    max_delivery_count    = optional(number, 10)
-    notifications_enabled = optional(bool, false)
-    sas_ttl               = optional(string, "PT1H")
+    lock_duration         = optional(string) # Default: "PT1M"
+    max_delivery_count    = optional(number) # Default: 10
+    notifications_enabled = optional(bool)   # Default: false
+    sas_ttl               = optional(string) # Default: "PT1H"
   }))
 }
 
