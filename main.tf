@@ -1,7 +1,12 @@
+data "azurerm_key_vault_secret" "connection_string" {
+  for_each     = { for k, v in var.iothub_file_uploads : k => v if v.connection_string_key_vault_id != null && v.connection_string_key_vault_secret_name != null }
+  name         = each.value.connection_string_key_vault_secret_name
+  key_vault_id = each.value.connection_string_key_vault_id
+}
 resource "azurerm_iothub_file_upload" "iothub_file_uploads" {
   for_each = var.iothub_file_uploads
 
-  connection_string     = each.value.connection_string
+  connection_string     = each.value.connection_string != null ? each.value.connection_string : try(data.azurerm_key_vault_secret.connection_string[each.key].value, null)
   container_name        = each.value.container_name
   iothub_id             = each.value.iothub_id
   authentication_type   = each.value.authentication_type
