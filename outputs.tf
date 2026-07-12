@@ -1,3 +1,7 @@
+output "iothub_file_uploads_id" {
+  description = "Map of id values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.id }
+}
 output "iothub_file_uploads_authentication_type" {
   description = "Map of authentication_type values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
   value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.authentication_type }
