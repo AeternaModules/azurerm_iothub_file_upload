@@ -3,8 +3,8 @@ variable "iothub_file_uploads" {
 Map of iothub_file_uploads, attributes below
 Required:
     - connection_string
-    - connection_string_key_vault_id (alternative to connection_string - read from Key Vault instead)
-    - connection_string_key_vault_secret_name (alternative to connection_string - read from Key Vault instead)
+    - connection_string_key_vault_id (optional, alternative to connection_string)
+    - connection_string_key_vault_secret_name (optional, alternative to connection_string)
     - container_name
     - iothub_id
 Optional:
@@ -23,13 +23,13 @@ EOT
     connection_string_key_vault_secret_name = optional(string)
     container_name                          = string
     iothub_id                               = string
-    authentication_type                     = optional(string) # Default: "keyBased"
-    default_ttl                             = optional(string) # Default: "PT1H"
+    authentication_type                     = optional(string)
+    default_ttl                             = optional(string)
     identity_id                             = optional(string)
-    lock_duration                           = optional(string) # Default: "PT1M"
-    max_delivery_count                      = optional(number) # Default: 10
-    notifications_enabled                   = optional(bool)   # Default: false
-    sas_ttl                                 = optional(string) # Default: "PT1H"
+    lock_duration                           = optional(string)
+    max_delivery_count                      = optional(number)
+    notifications_enabled                   = optional(bool)
+    sas_ttl                                 = optional(string)
   }))
 }
 
