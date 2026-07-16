@@ -1,46 +1,46 @@
 output "iothub_file_uploads_id" {
   description = "Map of id values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.id }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "iothub_file_uploads_authentication_type" {
   description = "Map of authentication_type values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.authentication_type }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.authentication_type if v.authentication_type != null && length(v.authentication_type) > 0 }
 }
 output "iothub_file_uploads_connection_string" {
   description = "Map of connection_string values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.connection_string }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.connection_string if v.connection_string != null && length(v.connection_string) > 0 }
   sensitive   = true
 }
 output "iothub_file_uploads_container_name" {
   description = "Map of container_name values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.container_name }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.container_name if v.container_name != null && length(v.container_name) > 0 }
 }
 output "iothub_file_uploads_default_ttl" {
   description = "Map of default_ttl values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.default_ttl }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.default_ttl if v.default_ttl != null && length(v.default_ttl) > 0 }
 }
 output "iothub_file_uploads_identity_id" {
   description = "Map of identity_id values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.identity_id }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.identity_id if v.identity_id != null && length(v.identity_id) > 0 }
 }
 output "iothub_file_uploads_iothub_id" {
   description = "Map of iothub_id values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.iothub_id }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.iothub_id if v.iothub_id != null && length(v.iothub_id) > 0 }
 }
 output "iothub_file_uploads_lock_duration" {
   description = "Map of lock_duration values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.lock_duration }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.lock_duration if v.lock_duration != null && length(v.lock_duration) > 0 }
 }
 output "iothub_file_uploads_max_delivery_count" {
   description = "Map of max_delivery_count values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.max_delivery_count }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.max_delivery_count if v.max_delivery_count != null }
 }
 output "iothub_file_uploads_notifications_enabled" {
   description = "Map of notifications_enabled values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.notifications_enabled }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.notifications_enabled if v.notifications_enabled != null }
 }
 output "iothub_file_uploads_sas_ttl" {
   description = "Map of sas_ttl values across all iothub_file_uploads, keyed the same as var.iothub_file_uploads"
-  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.sas_ttl }
+  value       = { for k, v in azurerm_iothub_file_upload.iothub_file_uploads : k => v.sas_ttl if v.sas_ttl != null && length(v.sas_ttl) > 0 }
 }
 
